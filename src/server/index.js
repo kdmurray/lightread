@@ -1,21 +1,10 @@
 const http = require('http');
-
-var express = require('express');
+const express = require('express');
+const routes = require('./routes');
 
 var app = express();
 
-var Router = require('express-promise-router');
 
-var router = Router();
-
-router.get('/', (req, res, next) => {
-    res.send('home!');
-});
-
-router.get('/version', (req, res, next) => {
-    res.send('1.0.0');
-});
-
-app.use(router);
+app.use(routes);
 
 module.exports = http.createServer(app);
