@@ -16,7 +16,7 @@ var hashPassword = function(password, salt) {
 
 var testRun = function() {
     salt = generateRandomString(128);
-    pw = generateRandomString(24);
+    pw = generateRandomString(256);
     hash = hashPassword(pw, salt);
 
     console.log(`Salt: ${salt}`);
